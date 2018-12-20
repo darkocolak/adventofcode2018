@@ -34,15 +34,16 @@ public class day3part1 {
         JsonReader reader = new JsonReader(new FileReader(resource.getFile()));
         return gson.fromJson(reader, AreaClaim[].class);
     }
-}
+    private class AreaClaim {
+        int x, y, width, height;
+        String surface;
 
-class AreaClaim {
-    int x, y, width, height;
-    String surface;
-
-    void setupDimensions(){
-        String[] xes = this.surface.split("x");
-        this.width = Integer.parseInt(xes[0]);
-        this.height = Integer.parseInt(xes[1]);
+        void setupDimensions(){
+            String[] xes = this.surface.split("x");
+            this.width = Integer.parseInt(xes[0]);
+            this.height = Integer.parseInt(xes[1]);
+        }
     }
 }
+
+
